@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-#define ANSI
-//#define ISO
+//#define ANSI
+#define ISO
 //#define ALL_1U
 //#define HHKB
 
@@ -91,12 +91,19 @@
         // ------------------------------------------------------------------------------------------
       bindings = <
         &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &kp DEL
-        &trans &trans &kp UP &trans &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK
+        &trans &studio_unlock &kp UP &trans &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK
         &trans    &kp LEFT &kp DOWN &kp RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans &trans &trans &kp HOME  &kp PG_UP &rgb_ug RGB_TOG &bootloader
         &trans &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bl BL_INC &bl BL_DEC &trans &trans &trans &trans &kp END &kp PG_DN  &bl BL_TOG
         &bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans   &trans   &sys_reset &bt BT_CLR
       >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+    extra1 {
+            status = "reserved";
+    };
+
+    extra2 {
+        status = "reserved";
     };
     #elif defined(ALL_1U)
     default_layer {
